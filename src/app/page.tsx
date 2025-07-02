@@ -8,12 +8,12 @@ import TestimonialCard from "@/components/TestimonialCard";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="bg-white">
       {/* Hero principal */}
       <Hero {...hero} />
 
       {/* Presentación breve */}
-      <section className="text-center py-8 px-4 sm:px-2">
+      <section className="text-center py-8 px-4 sm:px-2 bg-white">
         <h2 className="text-2xl sm:text-3xl font-semibold">Soy Claudia García</h2>
         <p className="mt-2 text-lg sm:text-xl max-w-xl mx-auto">
           Personal shopper y maquilladora con más de 10 años ayudando a mujeres a encontrar su estilo con confianza y autenticidad.
@@ -31,7 +31,7 @@ export default function HomePage() {
       </section>
 
       {/* Galería Instagram (placeholder) */}
-      <section className="py-8 px-4 text-center">
+      <section className="py-8 px-4 text-center bg-white">
         <h3 className="text-xl font-bold mb-2">Sígueme en Instagram</h3>
         <p className="text-pink-600 font-medium">@claudiag...</p>
         {/* Aquí irá el embed real en Fase 4 */}

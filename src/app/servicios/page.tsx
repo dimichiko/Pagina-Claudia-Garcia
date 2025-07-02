@@ -1,6 +1,6 @@
 export default function ServiciosPage() {
   return (
-    <main className="px-4 py-8 max-w-4xl mx-auto">
+    <main className="px-4 py-8 max-w-4xl mx-auto bg-white">
       <h1 className="text-3xl font-bold mb-6 text-center">Servicios</h1>
 
       <section className="mb-10">
