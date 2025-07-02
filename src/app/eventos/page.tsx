@@ -11,7 +11,7 @@ export default function EventosPage() {
       <section>
         <h2 className="text-xl font-semibold mb-1">Eventos Realizados</h2>
         <ul className="list-disc list-inside">
-          <li>Workshop "Descubre tu estilo" con MAC Cosmetics</li>
+          <li>Workshop &quot;Descubre tu estilo&quot; con MAC Cosmetics</li>
           <li>Taller de automaquillaje en Parque Arauco</li>
           <li>Evento de lanzamiento con Essie Chile</li>
         </ul>
