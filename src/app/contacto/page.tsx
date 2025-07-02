@@ -1,14 +1,16 @@
 export default function ContactoPage() {
   return (
-    <main className="container mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold text-center mb-8">Contacto</h1>
+    <main className="px-4 py-8 max-w-xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6 text-center">Contáctame</h1>
+
       <form
-        action="https://formsubmit.co/tu-correo@gmail.com"
+        action="https://formsubmit.co/claugarc@gmail.com"
         method="POST"
-        className="max-w-md mx-auto space-y-4"
+        className="space-y-4"
       >
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://tudominio.com/gracias" />
+        <input type="hidden" name="_next" value="https://claudia-garcia.vercel.app/gracias" />
+
         <input
           name="name"
           type="text"
@@ -28,7 +30,7 @@ export default function ContactoPage() {
           placeholder="Tu mensaje"
           required
           className="w-full border px-4 py-2 rounded"
-        ></textarea>
+        />
         <button
           type="submit"
           className="bg-pink-600 text-white px-6 py-2 rounded-full"
@@ -36,6 +38,12 @@ export default function ContactoPage() {
           Enviar mensaje
         </button>
       </form>
+
+      <div className="mt-8 text-center">
+        <p className="mb-2">📞 WhatsApp: <a href="https://wa.me/56993000940" className="text-pink-600 underline">+56 9 9300 0940</a></p>
+        <p className="mb-2">📧 Email: <a href="mailto:claugarc@gmail.com" className="text-pink-600 underline">claugarc@gmail.com</a></p>
+        <p className="mb-2">📸 Instagram: <a href="https://instagram.com/claudiagarcia.cl" target="_blank" className="text-pink-600 underline">@claudiagarcia.cl</a></p>
+      </div>
     </main>
   );
 } 
