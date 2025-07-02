@@ -21,9 +21,9 @@ export default function HomePage() {
       </section>
 
       {/* Servicios destacados */}
-      <section className="py-12 px-2">
-        <h2 className="text-center text-3xl font-bold mb-6">Servicios</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <section className="py-12 px-2 bg-gray-50 rounded-lg shadow-md max-w-5xl mx-auto mb-8">
+        <h2 className="text-center text-3xl font-bold mb-6 text-pink-700">Servicios</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <ServiceCard key={i} {...s} />
           ))}
@@ -38,9 +38,9 @@ export default function HomePage() {
       </section>
 
       {/* Testimonios destacados */}
-      <section className="py-12 text-center px-2 bg-gray-50">
-        <h2 className="text-3xl font-bold mb-4">Testimonios</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <section className="py-12 text-center px-2 bg-pink-50 rounded-lg shadow-md max-w-4xl mx-auto mb-8">
+        <h2 className="text-3xl font-bold mb-4 text-pink-700">Testimonios</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((t, i) => (
             <TestimonialCard key={i} name={t.name} testimonial={t.message} />
           ))}
