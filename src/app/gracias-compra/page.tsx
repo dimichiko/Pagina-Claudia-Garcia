@@ -13,12 +13,13 @@ function SuccessBanner() {
   );
 }
 
-export default function GraciasCompraPage({
+export default async function GraciasCompraPage({
   searchParams,
 }: {
-  searchParams: { compra?: string };
+  searchParams: Promise<{ compra?: string }>;
 }) {
-  const isSuccessfulPurchase = searchParams.compra === "ok";
+  const params = await searchParams;
+  const isSuccessfulPurchase = params.compra === "ok";
 
   return (
     <main className="container mx-auto py-20 px-4 text-center bg-white min-h-[70vh] flex flex-col items-center justify-center">
