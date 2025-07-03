@@ -81,7 +81,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2">
                 <MapPin size={16} className="text-gray-600" />
-                <span className="text-gray-800">Buenos Aires, Argentina</span>
+                <span className="text-gray-800">Concepción, Chile</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 mt-8 pt-8 text-center">
           <p className="text-gray-600 text-sm">
-            © 2024 Claudia García. Todos los derechos reservados.
+            © 2025 Claudia García. Todos los derechos reservados.
           </p>
         </div>
       </div>
