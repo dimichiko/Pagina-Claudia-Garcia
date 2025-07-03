@@ -13,14 +13,14 @@ export default function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-black text-white p-4 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+      className="fixed bottom-6 right-6 z-50 bg-white border border-black text-black p-4 rounded-full shadow-lg hover:bg-gray-200 transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <MessageCircle size={24} />
+      <MessageCircle size={24} className="text-black" />
     </motion.a>
   );
 } 

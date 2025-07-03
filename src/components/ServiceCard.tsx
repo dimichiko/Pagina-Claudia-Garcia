@@ -42,7 +42,7 @@ export default function ServiceCard({
         <h3 className="text-2xl font-bold text-black tracking-tight mb-3">
           {title}
         </h3>
-        <p className="text-gray-700 leading-relaxed mb-4">
+        <p className="text-gray-800 leading-relaxed mb-4">
           {description}
         </p>
         <div className="text-3xl font-bold text-black mb-2">
@@ -52,7 +52,7 @@ export default function ServiceCard({
 
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center text-gray-700">
+          <li key={index} className="flex items-center text-gray-800">
             <span className="text-black mr-3">✓</span>
             {feature}
           </li>
@@ -61,11 +61,7 @@ export default function ServiceCard({
 
       <Link
         href={buttonHref}
-        className={`w-full text-center py-3 px-6 rounded-full font-medium transition-colors ${
-          isPopular
-            ? "bg-black text-white hover:bg-gray-800"
-            : "border border-black text-black hover:bg-black hover:text-white"
-        }`}
+        className="w-full text-center border border-black text-black py-3 px-6 rounded-full hover:bg-black hover:text-white transition font-medium"
       >
         {buttonText}
       </Link>

@@ -29,11 +29,9 @@ export default function ContactoPage() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactForm) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     try {
-      // Simular envío del formulario
-      console.log("Datos del formulario:", data);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmitSuccess(true);
       reset();
@@ -46,13 +44,13 @@ export default function ContactoPage() {
 
   return (
     <main className="bg-white py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-3xl">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-black tracking-tight mb-6">
             Contacto
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-800 max-w-2xl mx-auto leading-relaxed">
             ¿Lista para transformar tu estilo? Contáctame y conversemos sobre cómo puedo ayudarte 
             a descubrir tu mejor versión.
           </p>
@@ -64,7 +62,6 @@ export default function ContactoPage() {
             <h2 className="text-2xl font-bold text-black tracking-tight mb-8">
               Información de Contacto
             </h2>
-            
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="bg-black text-white p-3 rounded-full">
@@ -72,34 +69,31 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-medium text-black">Teléfono</h3>
-                  <p className="text-gray-700">+54 9 11 1234-5678</p>
+                  <a href="tel:+5491112345678" className="text-black hover:text-gray-600 transition-colors">+54 9 11 1234-5678</a>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <div className="bg-black text-white p-3 rounded-full">
                   <Mail size={20} />
                 </div>
                 <div>
                   <h3 className="font-medium text-black">Email</h3>
-                  <p className="text-gray-700">claudia@ejemplo.com</p>
+                  <a href="mailto:claudia@ejemplo.com" className="text-black hover:text-gray-600 transition-colors">claudia@ejemplo.com</a>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <div className="bg-black text-white p-3 rounded-full">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <h3 className="font-medium text-black">Ubicación</h3>
-                  <p className="text-gray-700">Buenos Aires, Argentina</p>
+                  <span className="text-black">Buenos Aires, Argentina</span>
                 </div>
               </div>
             </div>
-
             <div className="mt-8 p-6 border border-gray-200 rounded-lg">
               <h3 className="text-lg font-medium text-black mb-4">Horarios de Atención</h3>
-              <div className="space-y-2 text-gray-700">
+              <div className="space-y-2 text-gray-800">
                 <p>Lunes a Viernes: 9:00 - 18:00</p>
                 <p>Sábados: 10:00 - 14:00</p>
                 <p>Domingos: Cerrado</p>
@@ -112,22 +106,21 @@ export default function ContactoPage() {
             <h2 className="text-2xl font-bold text-black tracking-tight mb-8">
               Envíame un Mensaje
             </h2>
-
             {submitSuccess ? (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-green-50 border border-green-200 rounded-lg p-6 text-center"
+                className="bg-gray-100 border border-gray-200 rounded-lg p-6 text-center"
               >
-                <h3 className="text-lg font-medium text-green-800 mb-2">
+                <h3 className="text-lg font-medium text-black mb-2">
                   ¡Mensaje enviado exitosamente!
                 </h3>
-                <p className="text-green-700">
+                <p className="text-gray-800">
                   Te responderé en las próximas 24 horas.
                 </p>
                 <button
                   onClick={() => setSubmitSuccess(false)}
-                  className="mt-4 border border-green-600 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors"
+                  className="mt-4 border border-black text-black px-6 py-2 rounded-full hover:bg-black hover:text-white transition"
                 >
                   Enviar otro mensaje
                 </button>
@@ -149,7 +142,6 @@ export default function ContactoPage() {
                     <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
                   )}
                 </div>
-
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
                     Email *
@@ -165,7 +157,6 @@ export default function ContactoPage() {
                     <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
                   )}
                 </div>
-
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
                     Teléfono *
@@ -181,7 +172,6 @@ export default function ContactoPage() {
                     <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
                   )}
                 </div>
-
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
                     Mensaje *
@@ -197,17 +187,16 @@ export default function ContactoPage() {
                     <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
                   )}
                 </div>
-
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-black text-white py-3 px-6 rounded-full hover:bg-gray-800 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full border border-black text-black py-3 px-6 rounded-full hover:bg-black hover:text-white transition font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-black"></div>
                       <span>Enviando...</span>
                     </>
                   ) : (

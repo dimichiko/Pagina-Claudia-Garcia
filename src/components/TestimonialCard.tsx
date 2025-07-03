@@ -26,7 +26,7 @@ export default function TestimonialCard({ name, role, content, rating }: Testimo
         </div>
       </div>
 
-      <blockquote className="text-gray-700 leading-relaxed mb-6 italic">
+      <blockquote className="text-gray-800 leading-relaxed mb-6 italic">
         &ldquo;{content}&rdquo;
       </blockquote>
 
