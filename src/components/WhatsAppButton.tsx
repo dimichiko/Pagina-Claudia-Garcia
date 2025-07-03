@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "+5491112345678";
+  const phoneNumber = "+56993000940";
   const message = "Hola! Me interesa conocer más sobre tus servicios de personal shopper.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

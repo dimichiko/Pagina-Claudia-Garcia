@@ -17,7 +17,7 @@ export default function Footer() {
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/claudiagarcia.cl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-gray-600 transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=743876392"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black hover:text-gray-600 transition-colors"
@@ -73,11 +73,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center justify-center md:justify-start space-x-2">
                 <Phone size={16} className="text-gray-600" />
-                <span className="text-gray-800">+54 9 11 1234-5678</span>
+                <a href="https://wa.me/56993000940" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-black transition-colors">+56 9 9300 0940</a>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2">
                 <Mail size={16} className="text-gray-600" />
-                <span className="text-gray-800">claudia@ejemplo.com</span>
+                <a href="mailto:claugarc@gmail.com" className="text-gray-800 hover:text-black transition-colors">claugarc@gmail.com</a>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-2">
                 <MapPin size={16} className="text-gray-600" />

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Instagram } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
@@ -68,8 +68,8 @@ export default function ContactoPage() {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <h3 className="font-medium text-black">Teléfono</h3>
-                  <a href="tel:+5491112345678" className="text-black hover:text-gray-600 transition-colors">+54 9 11 1234-5678</a>
+                  <h3 className="font-medium text-black">WhatsApp</h3>
+                  <a href="https://wa.me/56993000940" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">+56 9 9300 0940</a>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -78,7 +78,16 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-medium text-black">Email</h3>
-                  <a href="mailto:claudia@ejemplo.com" className="text-black hover:text-gray-600 transition-colors">claudia@ejemplo.com</a>
+                  <a href="mailto:claugarc@gmail.com" className="text-black hover:text-gray-600 transition-colors">claugarc@gmail.com</a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="bg-black text-white p-3 rounded-full">
+                  <Instagram size={20} />
+                </div>
+                <div>
+                  <h3 className="font-medium text-black">Instagram</h3>
+                  <a href="https://instagram.com/claudiagarcia.cl" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">@claudiagarcia.cl</a>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -166,7 +175,7 @@ export default function ContactoPage() {
                     type="tel"
                     id="phone"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
-                    placeholder="+54 9 11 1234-5678"
+                    placeholder="+56 9 9300 0940"
                   />
                   {errors.phone && (
                     <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
