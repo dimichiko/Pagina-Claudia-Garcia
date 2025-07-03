@@ -1,93 +1,97 @@
 import Link from "next/link";
-import { Instagram, Mail, Phone, Heart } from "lucide-react";
-import { contact } from "@/data/contact";
-
-const quickLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/portafolio", label: "Portafolio" },
-  { href: "/eventos", label: "Eventos" },
-  { href: "/contacto", label: "Contacto" },
-];
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 py-10 px-6 border-t border-gray-200">
-      <div className="container mx-auto">
-        {/* Grid principal */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          
-          {/* Columna 1: Logo y descripción */}
+    <footer className="bg-white border-t border-gray-200">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand Section */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold text-pink-600 mb-3">Claudia García</h3>
-            <p className="text-gray-600 text-sm mb-4">
-              Empodera tu estilo con propósito
+            <h3 className="text-2xl font-bold text-black tracking-tight mb-4">
+              Claudia García
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Personal Shopper, Asesora de Imagen y Maquilladora profesional. 
+              Transformando estilos y creando confianza.
             </p>
-            <p className="text-gray-500 text-xs">
-              Personal shopper y maquilladora profesional
-            </p>
+            <div className="flex justify-center md:justify-start space-x-4">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-500 transition-colors"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-500 transition-colors"
+              >
+                <Facebook size={20} />
+              </a>
+            </div>
           </div>
 
-          {/* Columna 2: Enlaces rápidos */}
+          {/* Quick Links */}
           <div className="text-center md:text-left">
-            <h4 className="font-semibold text-gray-800 mb-4">Enlaces rápidos</h4>
+            <h4 className="text-lg font-medium text-black mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href} 
-                    className="text-gray-600 hover:text-pink-600 text-sm transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/servicios" className="text-gray-700 hover:text-black transition-colors">
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link href="/portafolio" className="text-gray-700 hover:text-black transition-colors">
+                  Portafolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/eventos" className="text-gray-700 hover:text-black transition-colors">
+                  Eventos
+                </Link>
+              </li>
+              <li>
+                <Link href="/testimonios" className="text-gray-700 hover:text-black transition-colors">
+                  Testimonios
+                </Link>
+              </li>
+              <li>
+                <Link href="/contacto" className="text-gray-700 hover:text-black transition-colors">
+                  Contacto
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Columna 3: Contacto */}
+          {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h4 className="font-semibold text-gray-800 mb-4">Contacto</h4>
+            <h4 className="text-lg font-medium text-black mb-4">Contacto</h4>
             <div className="space-y-3">
-              <a 
-                href={contact.whatsapp} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-600 hover:text-pink-600 text-sm transition-colors"
-              >
-                <Phone size={16} />
-                <span>+56 9 9300 0940</span>
-              </a>
-              <a 
-                href="mailto:claugarc@gmail.com"
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-600 hover:text-pink-600 text-sm transition-colors"
-              >
-                <Mail size={16} />
-                <span>claugarc@gmail.com</span>
-              </a>
-              <a 
-                href={contact.instagram} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-600 hover:text-pink-600 text-sm transition-colors"
-              >
-                <Instagram size={16} />
-                <span>@claudiagarcia.cl</span>
-              </a>
+              <div className="flex items-center justify-center md:justify-start space-x-2">
+                <Phone size={16} className="text-gray-600" />
+                <span className="text-gray-700">+54 9 11 1234-5678</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start space-x-2">
+                <Mail size={16} className="text-gray-600" />
+                <span className="text-gray-700">claudia@ejemplo.com</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start space-x-2">
+                <MapPin size={16} className="text-gray-600" />
+                <span className="text-gray-700">Buenos Aires, Argentina</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Línea divisoria */}
-        <div className="border-t border-gray-200 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-xs text-center md:text-left">
-              © {new Date().getFullYear()} Claudia García. Todos los derechos reservados.
-            </p>
-            <p className="text-gray-400 text-xs flex items-center gap-1">
-              Hecho con <Heart size={12} className="text-pink-500" /> para empoderar tu estilo
-            </p>
-          </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-200 mt-8 pt-8 text-center">
+          <p className="text-gray-600 text-sm">
+            © 2024 Claudia García. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>

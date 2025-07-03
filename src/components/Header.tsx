@@ -1,29 +1,123 @@
-import Link from "next/link";
+"use client";
 
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/portafolio", label: "Portafolio" },
-  { href: "/eventos", label: "Eventos" },
-  { href: "/testimonios", label: "Testimonios" },
-  { href: "/contacto", label: "Contacto" },
-];
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
-      <nav className="container mx-auto flex flex-col items-center justify-center py-4 px-6 gap-y-2 text-center">
-        <span className="font-bold text-2xl tracking-tight text-pink-600 mb-2">Claudia García</span>
-        <ul className="flex flex-wrap justify-center gap-3 sm:gap-6 text-base font-medium">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="hover:text-pink-500 transition-colors">
-                {link.label}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="text-2xl font-bold text-black tracking-tight">
+            Claudia García
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/"
+              className="text-gray-800 hover:text-black transition-colors font-medium"
+            >
+              Inicio
+            </Link>
+            <Link
+              href="/servicios"
+              className="text-gray-800 hover:text-black transition-colors font-medium"
+            >
+              Servicios
+            </Link>
+            <Link
+              href="/portafolio"
+              className="text-gray-800 hover:text-black transition-colors font-medium"
+            >
+              Portafolio
+            </Link>
+            <Link
+              href="/eventos"
+              className="text-gray-800 hover:text-black transition-colors font-medium"
+            >
+              Eventos
+            </Link>
+            <Link
+              href="/testimonios"
+              className="text-gray-800 hover:text-black transition-colors font-medium"
+            >
+              Testimonios
+            </Link>
+            <Link
+              href="/contacto"
+              className="border border-black text-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition-colors font-medium"
+            >
+              Contacto
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-black hover:text-gray-600 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 bg-white">
+            <nav className="flex flex-col space-y-4 py-4">
+              <Link
+                href="/"
+                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Inicio
               </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+              <Link
+                href="/servicios"
+                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Servicios
+              </Link>
+              <Link
+                href="/portafolio"
+                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Portafolio
+              </Link>
+              <Link
+                href="/eventos"
+                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Eventos
+              </Link>
+              <Link
+                href="/testimonios"
+                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Testimonios
+              </Link>
+              <Link
+                href="/contacto"
+                className="border border-black text-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition-colors font-medium mx-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contacto
+              </Link>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 } 

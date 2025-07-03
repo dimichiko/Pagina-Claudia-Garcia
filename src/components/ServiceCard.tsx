@@ -1,53 +1,74 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-type ServiceCardProps = {
+interface ServiceCardProps {
   title: string;
   description: string;
-  image?: string;
-  priceText?: string;
-  pagofacilLink?: string;
-  icon?: React.ReactNode;
-};
+  price: string;
+  features: string[];
+  buttonText: string;
+  buttonHref: string;
+  isPopular?: boolean;
+}
 
-export default function ServiceCard({ title, description, image, priceText, pagofacilLink, icon }: ServiceCardProps) {
+export default function ServiceCard({
+  title,
+  description,
+  price,
+  features,
+  buttonText,
+  buttonHref,
+  isPopular = false,
+}: ServiceCardProps) {
   return (
-    <motion.div 
-      className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center max-w-xs"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      whileHover={{ y: -5, scale: 1.02 }}
-      viewport={{ once: true }}
+    <motion.div
+      className={`relative bg-white border border-gray-200 rounded-lg p-6 ${
+        isPopular ? "border-black" : ""
+      }`}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
     >
-      {image && (
-        <motion.img 
-          src={image} 
-          alt={title} 
-          className="w-full h-32 object-cover rounded-md mb-3"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-        />
+      {isPopular && (
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span className="bg-black text-white px-4 py-1 rounded-full text-sm font-medium">
+            Más Popular
+          </span>
+        </div>
       )}
-      {icon && <div className="mb-4 text-4xl text-pink-500">{icon}</div>}
-      <h3 className="font-bold text-lg mb-2">{title}</h3>
-      <p className="text-gray-600 mb-3">{description}</p>
-      {priceText && (
-        <div className="text-2xl font-bold text-pink-600 mb-3">{priceText}</div>
-      )}
-      {pagofacilLink && (
-        <motion.a
-          href={pagofacilLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-pink-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-pink-700 transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Comprar ahora
-        </motion.a>
-      )}
+
+      <div className="text-center mb-6">
+        <h3 className="text-2xl font-bold text-black tracking-tight mb-3">
+          {title}
+        </h3>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          {description}
+        </p>
+        <div className="text-3xl font-bold text-black mb-2">
+          {price}
+        </div>
+      </div>
+
+      <ul className="space-y-3 mb-8">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center text-gray-700">
+            <span className="text-black mr-3">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+
+      <Link
+        href={buttonHref}
+        className={`w-full text-center py-3 px-6 rounded-full font-medium transition-colors ${
+          isPopular
+            ? "bg-black text-white hover:bg-gray-800"
+            : "border border-black text-black hover:bg-black hover:text-white"
+        }`}
+      >
+        {buttonText}
+      </Link>
     </motion.div>
   );
 } 

@@ -2,33 +2,38 @@
 
 import { motion } from "framer-motion";
 
-type TestimonialCardProps = {
+interface TestimonialCardProps {
   name: string;
-  testimonial: string;
-  imageUrl?: string;
-};
+  role: string;
+  content: string;
+  rating: number;
+}
 
-export default function TestimonialCard({ name, testimonial, imageUrl }: TestimonialCardProps) {
+export default function TestimonialCard({ name, role, content, rating }: TestimonialCardProps) {
   return (
-    <motion.div 
-      className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center max-w-xs"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      whileHover={{ y: -5, scale: 1.02 }}
-      viewport={{ once: true }}
+    <motion.div
+      className="bg-white border border-gray-200 rounded-lg p-6"
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.3 }}
     >
-      {imageUrl && (
-        <motion.img 
-          src={imageUrl} 
-          alt={name} 
-          className="w-20 h-20 rounded-full mb-4 object-cover"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
-        />
-      )}
-      <p className="text-gray-700 italic mb-2">&ldquo;{testimonial}&rdquo;</p>
-      <span className="font-semibold text-pink-600">{name}</span>
+      <div className="flex items-center mb-4">
+        <div className="flex text-black">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className={i < rating ? "text-black" : "text-gray-300"}>
+              ★
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <blockquote className="text-gray-700 leading-relaxed mb-6 italic">
+        &ldquo;{content}&rdquo;
+      </blockquote>
+
+      <div className="border-t border-gray-200 pt-4">
+        <div className="font-medium text-black">{name}</div>
+        <div className="text-sm text-gray-600">{role}</div>
+      </div>
     </motion.div>
   );
 } 
