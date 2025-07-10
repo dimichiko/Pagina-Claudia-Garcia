@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Instagram } from "lucide-react";
+import { Mail, Phone, Send, Instagram } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
@@ -43,7 +43,7 @@ export default function ContactoPage() {
   };
 
   return (
-    <main className="bg-white py-20">
+    <main className="bg-white pt-20">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -65,20 +65,20 @@ export default function ContactoPage() {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="bg-black text-white p-3 rounded-full">
-                  <Phone size={20} />
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <h3 className="font-medium text-black">WhatsApp</h3>
-                  <a href="https://wa.me/56993000940" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">+56 9 9300 0940</a>
+                  <h3 className="font-medium text-black">Correo</h3>
+                  <a href="mailto:claudiagarcia.asesorias@gmail.com" className="text-black hover:text-gray-600 transition-colors">claudiagarcia.asesorias@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="bg-black text-white p-3 rounded-full">
-                  <Mail size={20} />
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <h3 className="font-medium text-black">Email</h3>
-                  <a href="mailto:claugarc@gmail.com" className="text-black hover:text-gray-600 transition-colors">claugarc@gmail.com</a>
+                  <h3 className="font-medium text-black">Teléfono</h3>
+                  <a href="https://wa.me/56993000940" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">+56 9 9300 0940</a>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -88,15 +88,6 @@ export default function ContactoPage() {
                 <div>
                   <h3 className="font-medium text-black">Instagram</h3>
                   <a href="https://instagram.com/claudiagarcia.cl" target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-600 transition-colors">@claudiagarcia.cl</a>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="bg-black text-white p-3 rounded-full">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <h3 className="font-medium text-black">Ubicación</h3>
-                  <span className="text-black">Buenos Aires, Argentina</span>
                 </div>
               </div>
             </div>

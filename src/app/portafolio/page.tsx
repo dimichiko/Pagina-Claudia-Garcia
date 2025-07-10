@@ -1,79 +1,43 @@
 
 
-export default function PortafolioPage() {
+export default function SobreClaudiaPage() {
   return (
-    <main className="bg-white py-20">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-black tracking-tight mb-6">
-            Portafolio
-          </h1>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Explora algunos de mis trabajos más recientes. Cada transformación es única 
-            y refleja la personalidad y objetivos de mis clientes.
-          </p>
-        </div>
-
-        {/* Galería de imágenes */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-black tracking-tight mb-8 text-center">
-            Transformaciones Recientes
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="flex flex-col items-center justify-center bg-gray-100 border border-gray-200 h-48 rounded-lg">
-                <span className="text-4xl text-gray-400 mb-2">📷</span>
-                <span className="text-gray-500 text-sm">Próximamente</span>
-              </div>
-            ))}
+    <main className="bg-white pt-20">
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-3xl">
+          <div className="prose prose-lg max-w-none text-black leading-relaxed">
+            <h1 className="text-4xl font-bold text-black tracking-tight mb-8 text-center">
+              Sobre Claudia
+            </h1>
+            
+            <div className="space-y-6 text-base leading-relaxed">
+              <p>
+                Soy Claudia García, Periodista UDD desde el 2008, con más de 15 años de experiencia en el mundo de la moda y la imagen personal. Mi pasión por ayudar a las mujeres a descubrir su mejor versión me llevó a especializarme como Asesora de Imagen Personal.
+              </p>
+              
+              <p>
+                Mi enfoque se centra en el empoderamiento femenino a través del estilo. Creo firmemente que cada mujer merece sentirse confiada y auténtica en su apariencia, sin importar su edad, talla o presupuesto.
+              </p>
+              
+              <p>
+                Como periodista, he desarrollado una capacidad única para entender las necesidades de comunicación y expresión personal. Esta experiencia me permite no solo trabajar en el aspecto visual, sino también en la confianza y autoestima de mis clientas.
+              </p>
+              
+              <p>
+                Mi metodología combina análisis de colorimetría, morfología corporal y psicología del color, adaptada a la realidad y estilo de vida de cada mujer. No creo en las reglas rígidas de la moda, sino en crear un estilo personal que refleje la esencia única de cada persona.
+              </p>
+              
+              <p>
+                A lo largo de mi carrera, he tenido el privilegio de trabajar con mujeres de todas las edades y profesiones, desde ejecutivas hasta emprendedoras, ayudándolas a desarrollar una imagen que las represente auténticamente y las haga sentir poderosas.
+              </p>
+              
+              <p>
+                Mi compromiso es guiarte en este viaje de autodescubrimiento, donde juntas encontraremos tu estilo personal, optimizaremos tu guardarropa y te empoderaremos para que brilles con confianza en cada aspecto de tu vida.
+              </p>
+            </div>
           </div>
         </div>
-
-        {/* Categorías de trabajo */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center p-8 border border-gray-200 rounded-lg">
-            <h3 className="text-xl font-bold text-black mb-4">Personal Shopper</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Renovación de closet, selección de piezas clave y creación de outfits 
-              que reflejan el estilo personal de cada cliente.
-            </p>
-          </div>
-          
-          <div className="text-center p-8 border border-gray-200 rounded-lg">
-            <h3 className="text-xl font-bold text-black mb-4">Asesoría de Imagen</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Análisis de colorimetría, morfología y estilo para realzar la identidad 
-              visual y crear confianza en cada presentación.
-            </p>
-          </div>
-          
-          <div className="text-center p-8 border border-gray-200 rounded-lg">
-            <h3 className="text-xl font-bold text-black mb-4">Maquillaje Profesional</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Maquillajes para eventos especiales, sesiones fotográficas y ocasiones 
-              que requieren un look impecable y duradero.
-            </p>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center bg-gray-50 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-black tracking-tight mb-4">
-            ¿Te gustaría ser mi próxima transformación?
-          </h2>
-          <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Cada cliente es único y merece una experiencia personalizada. 
-            Contáctame para comenzar tu propia transformación.
-          </p>
-          <a
-            href="/contacto"
-            className="border border-black text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition-colors font-medium"
-          >
-            Agendar Consulta
-          </a>
-        </div>
-      </div>
+      </section>
     </main>
   );
 } 

@@ -27,28 +27,22 @@ export default function Header() {
               Inicio
             </Link>
             <Link
+              href="/portafolio"
+              className="text-gray-800 hover:text-black transition-colors font-medium"
+            >
+              Sobre Claudia
+            </Link>
+            <Link
               href="/servicios"
               className="text-gray-800 hover:text-black transition-colors font-medium"
             >
               Servicios
             </Link>
             <Link
-              href="/portafolio"
+              href="/servicios#asesorias"
               className="text-gray-800 hover:text-black transition-colors font-medium"
             >
-              Portafolio
-            </Link>
-            <Link
-              href="/eventos"
-              className="text-gray-800 hover:text-black transition-colors font-medium"
-            >
-              Eventos
-            </Link>
-            <Link
-              href="/testimonios"
-              className="text-gray-800 hover:text-black transition-colors font-medium"
-            >
-              Testimonios
+              Asesorías
             </Link>
             <Link
               href="/contacto"
@@ -80,6 +74,13 @@ export default function Header() {
                 Inicio
               </Link>
               <Link
+                href="/portafolio"
+                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sobre Claudia
+              </Link>
+              <Link
                 href="/servicios"
                 className="text-gray-800 hover:text-black transition-colors font-medium px-4"
                 onClick={() => setIsMenuOpen(false)}
@@ -87,25 +88,11 @@ export default function Header() {
                 Servicios
               </Link>
               <Link
-                href="/portafolio"
+                href="/servicios#asesorias"
                 className="text-gray-800 hover:text-black transition-colors font-medium px-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Portafolio
-              </Link>
-              <Link
-                href="/eventos"
-                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Eventos
-              </Link>
-              <Link
-                href="/testimonios"
-                className="text-gray-800 hover:text-black transition-colors font-medium px-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Testimonios
+                Asesorías
               </Link>
               <Link
                 href="/contacto"
